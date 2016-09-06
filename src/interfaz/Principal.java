@@ -6,6 +6,8 @@
 
 package interfaz;
 
+import clases.Fraccionario;
+
 /**
  *
  * @author llara11
@@ -45,13 +47,19 @@ public class Principal extends javax.swing.JFrame {
         cmdLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("OPERACIONES CON FRACCIONARIOS");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
+
+        txtNumerador.setEditable(false);
         jPanel1.add(txtNumerador, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 60, -1));
+
+        txtDenominador.setEditable(false);
         jPanel1.add(txtDenominador, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 60, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 100, 10));
 
@@ -73,12 +81,22 @@ public class Principal extends javax.swing.JFrame {
         cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(255, 255, 255));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
 
         cmdLimpiar.setBackground(new java.awt.Color(0, 0, 0));
         cmdLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmdLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         cmdLimpiar.setText("Limpiar");
+        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLimpiarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +113,43 @@ public class Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(662, 252));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        int op ,num1,num2,den1,den2;
+        Fraccionario f1,f2,f3=null;
+        op = cmbOperacion.getSelectedIndex();
+        num1=Integer.parseInt(txtNumerador1.getText());
+        num2=Integer.parseInt(txtNumerador2.getText());
+        den1=Integer.parseInt(txtDenominador1.getText());
+        den2=Integer.parseInt(txtDenominador2.getText());
+        
+        f1= new Fraccionario (num1,den1);
+        f2= new Fraccionario (num2,den2);
+        
+        switch (op) {
+            case 0:
+                f3 = f1.Sumar(f2);
+               break;
+            case 1 : 
+                f3 = f1.Resta(f2);
+                break;
+            case 2:
+                
+        }
+        txtNumerador.setText(""+f3.getNumerador());
+        txtDenominador.setText(""+f3.getDenominador());
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
+      txtNumerador1.setText("");
+      txtNumerador2.setText("");
+      txtNumerador.setText("");
+      txtDenominador1.setText("");
+      txtDenominador2.setText("");
+      txtDenominador.setText("");
+      txtNumerador1.requestFocusInWindow();
+      cmbOperacion.setSelectedIndex(0);
+    }//GEN-LAST:event_cmdLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
