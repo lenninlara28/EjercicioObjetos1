@@ -54,4 +54,25 @@ public class Fraccionario {
         f = new Fraccionario(num,den);
         return f;
     }
+    public Fraccionario Multiplicacion (Fraccionario f2) throws DenominadorCeroException{
+        Fraccionario f;
+        int num,den;
+        num=this.numerador * f2.numerador;
+        den=this.denominador * f2.denominador;
+        f = new Fraccionario (num,den);
+        return f;
+    }
+     public Fraccionario Division (Fraccionario f2) throws DenominadorCeroException{
+        Fraccionario f;
+        int num,den;
+        num=this.numerador * f2.denominador;
+        den=this.numerador * f2.numerador;
+        f = new Fraccionario (num,den);
+        return f;}
+     public Fraccionario  Mixto (Fraccionario f2)throws DenominadorCeroException{
+         Fraccionario f;
+         int parte_entero,num,den;
+         
+     }
+            
 }
