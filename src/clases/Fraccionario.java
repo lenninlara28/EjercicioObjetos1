@@ -69,10 +69,4 @@ public class Fraccionario {
         den=this.numerador * f2.numerador;
         f = new Fraccionario (num,den);
         return f;}
-     public Fraccionario  Mixto (Fraccionario f2)throws DenominadorCeroException{
-         Fraccionario f;
-         int parte_entero,num,den;
-         
-     }
-            
 }
