@@ -268,7 +268,6 @@ public class Principal extends javax.swing.JFrame {
 
     private void txtNumerador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerador1KeyTyped
         char c=evt.getKeyChar(); 
-             
           if(!Character.isDigit(c)) { 
               getToolkit().beep(); 
               evt.consume();}
@@ -276,27 +275,21 @@ public class Principal extends javax.swing.JFrame {
 
     private void txtDenominador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenominador1KeyTyped
         char c=evt.getKeyChar(); 
-             
-         
-          if(Character.isLetter(c)) { 
+          if(!Character.isDigit(c)) { 
               getToolkit().beep(); 
               evt.consume();}
     }//GEN-LAST:event_txtDenominador1KeyTyped
 
     private void txtNumerador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerador2KeyTyped
         char c=evt.getKeyChar(); 
-             
-         
-          if(Character.isLetter(c)) { 
+          if(!Character.isDigit(c)) { 
               getToolkit().beep(); 
               evt.consume();}
     }//GEN-LAST:event_txtNumerador2KeyTyped
 
     private void txtDenominador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenominador2KeyTyped
         char c=evt.getKeyChar(); 
-             
-         
-          if(Character.isLetter(c)) { 
+          if(!Character.isDigit(c)) { 
               getToolkit().beep(); 
               evt.consume();}
     }//GEN-LAST:event_txtDenominador2KeyTyped
